@@ -31,16 +31,12 @@ app.get('/api/notes', (req, res) =>
 
 app.post('/api/notes', (req, res) => {
 
-    // Destructuring assignment for the items in req.body
     const { title, text} = req.body;
   
-    // If all the required properties are present
-    if (title && text) {
-      // Variable for the object we will save
       const newNote = {
         title,
         text,
-        noteId: uuid(),
+        id: uuid(),
       };
   
       // Obtain existing notes
@@ -54,7 +50,6 @@ app.post('/api/notes', (req, res) => {
           // Add a new note
           parsedNotes.push(newNote);
   
-
           fs.writeFile(
             './db/db.json',
             JSON.stringify(parsedNotes, null, 4),
@@ -73,10 +68,9 @@ app.post('/api/notes', (req, res) => {
 
       console.log(response);
       res.status(201).json(response);
-    } else {
-      res.status(500).json('Error in posting note');
-    }
+     
   });
+
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
