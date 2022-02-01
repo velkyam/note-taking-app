@@ -3,6 +3,7 @@
 ## Description
 The goal of this project was to create a note taking application that will store all of your notes with their titles. The user can add new notes and read or remove old notes.
 
+## [Link to deployed heroku application](https://limitless-journey-72926.herokuapp.com/)
 <img src="./images/screen.png" alt="myteam_screenshot" width="500"/>
 
 
